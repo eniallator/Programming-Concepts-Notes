@@ -7,9 +7,9 @@ input: "array A[1...n]"
 output: "boolean where true is returned if the array is bitonic, false otherwise"
 
 DECREASING ⬅ false
-FLAG ⬅ n <= 2
+FLAG ⬅ n < 3
 i ⬅ 1
-while not FLAG and i <= n - 1 do
+while not FLAG and i < n do
   FLAG ⬅ A[i] = A[i + 1]
   if not DECREASING then
     DECREASING ⬅ A[i] > A[i + 1]
