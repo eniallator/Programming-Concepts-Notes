@@ -200,10 +200,12 @@ return n * (n + 1) / 2
 #### Estimating Growth Functions
 
 - Constants dont count:
-  |Function|F|G|G larger than F after|
-  |-|:-:|:-:|:-:|
-  ||10n²|2n³|n > 50|
-  ||1000n²|3n³|n > 350|
-  ||1000n³|n⁴|n > 1000|
+
+  | Function |   F    |  G  | G larger than F after |
+  | -------- | :----: | :-: | :-------------------: |
+  |          |  10n²  | 2n³ |        n > 50         |
+  |          | 1000n² | 3n³ |        n > 350        |
+  |          | 1000n³ | n⁴  |       n > 1000        |
+
 - Small terms get swamped
 - Depends on the largest degree of the polynomial
