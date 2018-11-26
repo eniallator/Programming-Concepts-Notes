@@ -209,3 +209,35 @@ return n * (n + 1) / 2
 
 - Small terms get swamped
 - Depends on the largest degree of the polynomial
+
+#### Approximating Growth Functions
+
+- Big theta notation
+  - θ(f(n)): all functions which grow at the same rate as f(n)
+- g(n) is in θ(f(n)) if:
+  - There is a constant, K<sub>g</sub>, such that g(n) <= k<sub>g</sub> \* f(n), once n gets sufficiently large
+  - There is a constant, K<sub>f</sub>, such that f(n) <= k<sub>f</sub> \* g(n), once n gets sufficiently large
+
+#### Important Complexity Classes
+
+| Class       |    Theta Notation     |
+| ----------- | :-------------------: |
+| Constant    |         θ(1)          |
+| Logarithmic |       θ(log n)        |
+| Linear      |         θ(n)          |
+| n-log-n     |      θ(n log n)       |
+| Quadratic   |         θ(n²)         |
+| Cubic       |         θ(n³)         |
+| Polynomial  | θ(nᵏ) for some k >= 1 |
+| Exponential |         θ(kⁿ)         |
+
+- Examples:
+  - 2 \* n + 6 is in θ(n)
+  - 4 + n² + 10 + n + 6 is in θ(n²)
+
+#### Emphasis On Fast Algorithms
+
+- Having a lower complexity class implemented by a bad programmer is much better than having a good programmer who implements a higher complexity class algorithm
+- Sequential vs. binary searches
+  - 1 billion billion for sequential and 60 for binary
+- Merge sort is θ(n log n)
