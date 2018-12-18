@@ -52,13 +52,13 @@
 
 ## Propositional Meta-Variables
 
-- If Abraham Lincoln was Ethiopian, then he was African. Abaham Lincoln was not African. Therefore he was not Ethiopian.
+- If Abraham Lincoln was Ethiopian, then he was African. Abraham Lincoln was not African. Therefore he was not Ethiopian.
 - Atomic Propositions:
   - **A:** Abaham Lincoln was Ethiopian
   - **B:** Abaham Lincoln was African
 - Formal Argument:
   - Given premises:
-  - A **implies B**
+  - A **implies** B
   - **not** B
   - Is **not** A a logical consequence?
 
