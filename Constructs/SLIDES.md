@@ -49,10 +49,10 @@
 - In pseudo-code
   - Variables are used to store data
   - Variables can be updated:
-    - `COUNTER ⬅ 0`
+    - `COUNTER ⟵ 0`
   - Variables can be interrogated:
-    - `TOTAL ⬅ SALARY + INCREMENT`
-    - `COUNTER ⬅ COUNTER + 1`
+    - `TOTAL ⟵ SALARY + INCREMENT`
+    - `COUNTER ⟵ COUNTER + 1`
 
 ### Arrays
 
@@ -100,9 +100,9 @@
 
 ```java
   // interchange A[i] with A[j]
-  TEMP ⬅ A[i]
-  A[i] ⬅ A[j]
-  A[j] ⬅ TEMP
+  TEMP ⟵ A[i]
+  A[i] ⟵ A[j]
+  A[j] ⟵ TEMP
 ```
 
 ## Conditional Sequencing
@@ -150,7 +150,7 @@ do D
 - Do something an exact number of times
 
 ```java
-for i ⬅ start TO finish do
+for i ⟵ start TO finish do
     something
 ```
 
@@ -170,9 +170,9 @@ for i ⬅ start TO finish do
 input: "positive number n"
 output: "sum of first n positive numbers"
 
-SUM ⬅ 0
-for i ⬅ 1 TO n do
-    SUM ⬅ SUM + i
+SUM ⟵ 0
+for i ⟵ 1 TO n do
+    SUM ⟵ SUM + i
 return SUM
 ```
 
@@ -191,11 +191,11 @@ return SUM
 input: "positive number n"
 output: "sum of first n positive numbers"
 
-SUM ⬅ 0
-ITER ⬅ 1
+SUM ⟵ 0
+ITER ⟵ 1
 while ITER <= n do
-    SUM ⬅ SUM + i
-    ITER ⬅ ITER + 1
+    SUM ⟵ SUM + i
+    ITER ⟵ ITER + 1
 return SUM
 ```
 
@@ -217,11 +217,11 @@ input: "an array E[1 ... n]"
 output: "total salary of all employees"
 assumptions: "array elements contain salary field"
 
-TOTAL ⬅ 0
-PTR ⬅ 1
+TOTAL ⟵ 0
+PTR ⟵ 1
 while PTR <= n do
-  TOTAL ⬅ TOTAL + salary(E[PTR])
-  PTR ⬅ PTR + 1
+  TOTAL ⟵ TOTAL + salary(E[PTR])
+  PTR ⟵ PTR + 1
 return TOTAL
 
 -- Should be bounded iteration
@@ -235,18 +235,18 @@ input: "an array E[1 ... n] of employee details"
 output: "number of employees earning more than their boss"
 assumptions: "array elements contain name, salary, boss fields. Every employee has a boss"
 
-HAPPY ⬅ 0
-for i ⬅ 1 to n do
-  BOSS ⬅ boss(E[i])
-  SALARY ⬅ salary(E[i])
+HAPPY ⟵ 0
+for i ⟵ 1 to n do
+  BOSS ⟵ boss(E[i])
+  SALARY ⟵ salary(E[i])
 
   -- find PTR satisfying BOSS = name(E[PTR])
-  PTR ⬅ 1
+  PTR ⟵ 1
   while BOSS != name(E[PTR]) do
-    PTR ⬅ PTR + 1
+    PTR ⟵ PTR + 1
 
   if salary(E[PTR]) < SALARY then
-    HAPPY ⬅ HAPPY + 1
+    HAPPY ⟵ HAPPY + 1
 
 return HAPPY
 ```

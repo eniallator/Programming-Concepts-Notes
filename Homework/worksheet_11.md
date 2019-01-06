@@ -6,12 +6,12 @@
 
 | Property P    | Code                   | Answer                                                      |
 | ------------- | ---------------------- | ----------------------------------------------------------- |
-| X + Y is even | X ⬅ X + 1<br>Y ⬅ Y + 1 | Not necessarily, for instance if<br>X is even and Y is odd. |
-| X + Y is odd  | X ⬅ X + 1<br>Y ⬅ Y + 2 | No since it will be even and<br>then odd                    |
-| X + Y = _k_   | X ⬅ X + 1<br>Y ⬅ Y - 1 | Yes                                                         |
-| X + Y < _k_   | X ⬅ X + 1<br>Y ⬅ Y - 2 | Yes                                                         |
-| Y is even     | X ⬅ X + 1<br>Y ⬅ Y + X | No, same answer for X + Y is odd                            |
-| X + Y is even | X ⬅ X + 1<br>Y ⬅ Y + 2 | No, same answer for X + Y is odd                            |
+| X + Y is even | X ⟵ X + 1<br>Y ⟵ Y + 1 | Not necessarily, for instance if<br>X is even and Y is odd. |
+| X + Y is odd  | X ⟵ X + 1<br>Y ⟵ Y + 2 | No since it will be even and<br>then odd                    |
+| X + Y = _k_   | X ⟵ X + 1<br>Y ⟵ Y - 1 | Yes                                                         |
+| X + Y < _k_   | X ⟵ X + 1<br>Y ⟵ Y - 2 | Yes                                                         |
+| Y is even     | X ⟵ X + 1<br>Y ⟵ Y + X | No, same answer for X + Y is odd                            |
+| X + Y is even | X ⟵ X + 1<br>Y ⟵ Y + 2 | No, same answer for X + Y is odd                            |
 
 ## Q2
 
@@ -21,12 +21,12 @@
 input: "array A[1...n]"
 output: "Running minimum array, M[1...n]"
 
-M ⬅ [1...n]
-MIN ⬅ A[1]
-for i ⬅ 1 to n do
+M ⟵ [1...n]
+MIN ⟵ A[1]
+for i ⟵ 1 to n do
     if A[i] < MIN then
-        MIN ⬅ A[i]
-    M[i] ⬅ MIN
+        MIN ⟵ A[i]
+    M[i] ⟵ MIN
 return M
 ```
 
@@ -41,13 +41,13 @@ return M
 input: "k"
 output: "k!"
 
-X ⬅ 1
-Y ⬅ 1
+X ⟵ 1
+Y ⟵ 1
 ⇐ Y = X!
 while X < k do
     ⇐ Y = X!
-    X ⬅ X + 1
-    Y ⬅ Y * X
+    X ⟵ X + 1
+    Y ⟵ Y * X
 return Y
 ⇐ Y = X! and X = k so Y = k!
 ```

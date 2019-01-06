@@ -15,8 +15,8 @@
 - E.g pseudo-code
 
 ```lua
-PTR ⬅ 1
-cMAX ⬅ A[PTR]
+PTR ⟵ 1
+cMAX ⟵ A[PTR]
 ⇐ "cMAX = 1"
 ```
 
@@ -39,16 +39,16 @@ output: "largest ..."
 -- Initial Assertion
 ⇐ "n >= 1"
 ...
-PTR ⬅ 1
-cMAX ⬅ A[PTR]
+PTR ⟵ 1
+cMAX ⟵ A[PTR]
 ⇐ "cMAX = A[1]"
 
 while PTR != n do
     -- Loop Assertion
     ⇐ "cMAX is largest element in A[1...PTR]"
-    PTR ⬅ PTR + 1
+    PTR ⟵ PTR + 1
     if A[PTR] > cMAX then
-        cMAX ⬅ A[PTR]
+        cMAX ⟵ A[PTR]
 
 -- Final Assertion
 ⇐ "PTR = n"
@@ -79,13 +79,13 @@ input: "number K > 0"
 output: "K²"
 
 ⇐ "K >= 0"
-X ⬅ 0
-Y ⬅ 0
+X ⟵ 0
+Y ⟵ 0
 while X != K do
     -- Loop invariant uses all variables 😍
     ⇐ "Y = X * K"
-    Y ⬅ Y + K
-    X ⬅ X + 1
+    Y ⟵ Y + K
+    X ⟵ X + 1
 ⇐ "Y = K² and x = k"
 return Y
 ⇐ "K² returned"
@@ -114,15 +114,15 @@ return Y
 
 | Pre       | Code      | Post       |
 | --------- | --------- | ---------- |
-| X = Y + 2 | Y ⬅ Y + 1 | X > Y \* 2 |
+| X = Y + 2 | Y ⟵ Y + 1 | X > Y \* 2 |
 |           |           |            |
-| X = Y + 1 | Y ⬅ Y + X | X > Y \* 2 |
+| X = Y + 1 | Y ⟵ Y + X | X > Y \* 2 |
 |           |           |            |
-| X + Y > K | X ⬅ X + X | Y > k      |
-|           | Y ⬅ Y - 1 |            |
+| X + Y > K | X ⟵ X + X | Y > k      |
+|           | Y ⟵ Y - 1 |            |
 |           |           |            |
-| X > Y     | X ⬅ X + 1 | X - Y > 0  |
-|           | Y ⬅ Y - 1 |            |
+| X > Y     | X ⟵ X + 1 | X - Y > 0  |
+|           | Y ⟵ Y - 1 |            |
 
 ## Rules For Applying Valid Assertions
 
@@ -166,14 +166,14 @@ input: "number n >= 1"
 output: "sum of first n positive numbers"
 
 ⇐ "n >= 1"
-PTR ⬅ 1
-SUM ⬅ 1
+PTR ⟵ 1
+SUM ⟵ 1
 -- SHOULD BE FOR LOOP
 ⇐ "SUM = PTR"
 while PTR != n do
   ⇐ "SUM = 1 + ... + PTR"
-  PTR ⬅ PTR + 1
-  SUM ⬅ SUM + PTR
+  PTR ⟵ PTR + 1
+  SUM ⟵ SUM + PTR
 
 ⇐ "SUM = 1 + ... + PTR and PTR = n"
 return SUM
@@ -193,13 +193,13 @@ input: "number n >= 1"
 output: "sum of first n positive numbers"
 
 ⇐ "n >= 1"
-PTR ⬅ 1
-SUM ⬅ 1
+PTR ⟵ 1
+SUM ⟵ 1
 ⇐ "SUM = PTR"
 while PTR < n do
   ⇐ "SUM = 1 + ... + PTR"
-  PTR ⬅ PTR + 1
-  SUM ⬅ SUM + PTR
+  PTR ⟵ PTR + 1
+  SUM ⟵ SUM + PTR
 
 ⇐ "SUM = 1 + ... + PTR and PTR >= n"
 return SUM
@@ -213,13 +213,13 @@ input: "number n >= 1"
 output: "sum of first n positive numbers"
 
 ⇐ "n >= 1"
-PTR ⬅ 1
-SUM ⬅ 1
+PTR ⟵ 1
+SUM ⟵ 1
 ⇐ "SUM = PTR and PTR <= n"
 while PTR < n do
   ⇐ "SUM = 1 + ... + PTR and PTR <= n"
-  PTR ⬅ PTR + 1
-  SUM ⬅ SUM + PTR
+  PTR ⟵ PTR + 1
+  SUM ⟵ SUM + PTR
 
 ⇐ "SUM = 1 + ... + PTR and PTR <= n and PTR >= n"
 return SUM
@@ -236,10 +236,10 @@ return SUM
 input: "Array A[1...n]"
 output: "sum of elements in A"
 
-SUM ⬅ 0
+SUM ⟵ 0
 ⇐ "SUM = 0"
-for i ⬅ 1 to n do
-  SUM ⬅ SUM + A[i]
+for i ⟵ 1 to n do
+  SUM ⟵ SUM + A[i]
   ⇐ "SUM = A[1] + ... + A[i]"
 
 ⇐ "SUM = A[1] + ... + A[n]"
@@ -248,7 +248,7 @@ return SUM
 
 ## For Loop Invariance Theorem
 
-- **for** _i_ ⬅ 1 **to** _n_ **do** Body
+- **for** _i_ ⟵ 1 **to** _n_ **do** Body
 - Suppose Inv(i) is a mathematical statement about i
   - If Inv(0) is true before the For-statement starts
   - If {Inv(i)} Body {Inv(i + 1)}
@@ -258,14 +258,14 @@ return SUM
 
 ```lua
 ⇐ "Inv(0)"
-for i ⬅ 1 to n do
+for i ⟵ 1 to n do
   Body
   ⇐ "Inv(i)"
 
 -- Can be extended to:
 
 ⇐ "Inv(0)"
-for i ⬅ 1 to n do
+for i ⟵ 1 to n do
   Body
   ⇐ "Inv(i)"
 ⇐ "Inv(n)"

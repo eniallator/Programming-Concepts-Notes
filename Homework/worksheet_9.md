@@ -6,10 +6,10 @@
 input: "Array A[1...n]"
 output: "true if all items are distinct, false otherwise"
 
-DISTINCT ⬅ true
-for i ⬅ 1 to n - 1 do
-    for j ⬅ i + 1 to n do
-        if A[i] = A[j] then DISTINCT ⬅ false
+DISTINCT ⟵ true
+for i ⟵ 1 to n - 1 do
+    for j ⟵ i + 1 to n do
+        if A[i] = A[j] then DISTINCT ⟵ false
 return DISTINCT
 ```
 
@@ -24,14 +24,14 @@ return DISTINCT
 input: "Array A[1...n]"
 output: "true if all items are distinct, false otherwise"
 
-DISTINCT ⬅ true
-i ⬅ 1
+DISTINCT ⟵ true
+i ⟵ 1
 while DISTINCT and i < n do
-    j ⬅ i + 1
+    j ⟵ i + 1
     while DISTINCT and j <= n do
-        if A[i] = A[j] then DISTINCT ⬅ false
-        j ⬅ j + 1
-    i ⬅ i + 1
+        if A[i] = A[j] then DISTINCT ⟵ false
+        j ⟵ j + 1
+    i ⟵ i + 1
 return DISTINCT
 ```
 
@@ -44,13 +44,13 @@ return DISTINCT
 input: "Array A[1...n]"
 output: "The spread of array A"
 
-MIN ⬅ A[1]
-MAX ⬅ A[1]
-for i ⬅ 2 to n do
+MIN ⟵ A[1]
+MAX ⟵ A[1]
+for i ⟵ 2 to n do
     if A[i] > MAX then
-        MAX ⬅ A[i]
+        MAX ⟵ A[i]
     if A[i] < MIN then
-        MIN ⬅ A[i]
+        MIN ⟵ A[i]
 return MAX - MIN
 ```
 

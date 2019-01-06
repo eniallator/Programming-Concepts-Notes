@@ -9,11 +9,11 @@ input: "array: A[1...n]"
 output: "the sum of all the elements in array A"
 assumptions: "Array A has atleast 1 element"
 
-SUM ⬅ 0
-PTR ⬅ 1
+SUM ⟵ 0
+PTR ⟵ 1
 repeat
-    SUM ⬅ SUM + A[PTR]
-    PTR ⬅ PTR + 1
+    SUM ⟵ SUM + A[PTR]
+    PTR ⟵ PTR + 1
 until PTR > n
 return SUM
 ```
@@ -25,12 +25,12 @@ input: "array: A[1...n]"
 output: "The largest element in array A"
 assumptions: "INFINITY is the mathematical concept of infinity"
 
-LARGEST ⬅ -INFINITY
-PTR ⬅ 1
+LARGEST ⟵ -INFINITY
+PTR ⟵ 1
 repeat
     if A[PTR] > LARGEST then
-        LARGEST ⬅ A[PTR]
-    PTR ⬅ PTR + 1
+        LARGEST ⟵ A[PTR]
+    PTR ⟵ PTR + 1
 until PTR > n
 return LARGEST
 ```
@@ -40,10 +40,10 @@ return LARGEST
 ```lua
 -- Equivalent to the repeat until construct using a while loop.
 
-FIRST ⬅ true
+FIRST ⟵ true
 while FIRST or Cond do
     Body()
-    FIRST ⬅ false
+    FIRST ⟵ false
 ```
 
 ### d) Same thing as c but a for loop
@@ -51,8 +51,8 @@ while FIRST or Cond do
 ```lua
 -- Equivalent to for loop but using a while loop
 
-ITER ⬅ START
+ITER ⟵ START
 while ITER < FINISH do
     body()
-    ITER ⬅ + 1
+    ITER ⟵ + 1
 ```

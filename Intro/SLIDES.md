@@ -34,7 +34,7 @@
 
 - Example:
   - Specification: bake a chocolate mousse
-  - Implementation: Melt chocolate, when melted... ⬅ a recipe
+  - Implementation: Melt chocolate, when melted... ⟵ a recipe
 
 ## Large VS Small Projects
 

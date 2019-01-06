@@ -66,19 +66,19 @@ input: "array A[1...n] and item M"
 output: "true if M occurs in A, false if M doesn't occur in A"
 
 -- Can't ever break/continue a while or for loop in pseudo-code
-FOUND ⬅ false
-for i ⬅ 1 to n do
+FOUND ⟵ false
+for i ⟵ 1 to n do
     if A[i] = M then
-        FOUND ⬅ true
+        FOUND ⟵ true
 return FOUND
 
 -- Alternative while loop implementation
-FOUND ⬅ false
-PTR ⬅ 1
+FOUND ⟵ false
+PTR ⟵ 1
 while not FOUND and PTR <= n do
     if A[PTR] = M then
-        FOUND ⬅ true
-    PTR ⬅ PTR + 1
+        FOUND ⟵ true
+    PTR ⟵ PTR + 1
 return FOUND
 ```
 
@@ -113,8 +113,8 @@ return FOUND
 
 #### Do Simple Instances
 
-- C D A B ➡ A B C D
-- M A G D ➡ A D G M
+- C D A B ⟶ A B C D
+- M A G D ⟶ A D G M
 
 #### Isolate Effective Interchanges
 
@@ -126,20 +126,20 @@ return FOUND
 
 ### Pseudo-Code
 
-- Swap operation notation: ↔
+- Swap operation notation: ⟷
 
 ```lua
 input: "An array A[1...n]"
 output: "Array A[1...n] sorted in ascending order"
 
-for i ⬅ 1 to (n - 1) do
+for i ⟵ 1 to (n - 1) do
     -- Maintains A[1...i] sorted
-    MINPTR ⬅ i
-    for j ⬅ (i + 1) to n do
+    MINPTR ⟵ i
+    for j ⟵ (i + 1) to n do
         -- Finds smallest item in A[i...n]
         if A[j] < A[MINPTR] then
-            MINPTR ⬅ j
-    A[i] ↔ A[MINPTR] -- Swap items
+            MINPTR ⟵ j
+    A[i] ⟷ A[MINPTR] -- Swap items
 return A
 ```
 
@@ -157,8 +157,8 @@ return A
 input: "An array A[1...n]"
 output: "Array A[1...n] sorted in ascending order"
 
-for i ⬅ 1 to n - 1 do
-    for j ⬅ 1 to n - i do
+for i ⟵ 1 to n - 1 do
+    for j ⟵ 1 to n - i do
         if A[j] > A[j + 1] then
-            A[j] ↔ A[j + 1]
+            A[j] ⟷ A[j + 1]
 ```
